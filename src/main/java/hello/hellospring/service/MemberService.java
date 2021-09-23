@@ -22,6 +22,8 @@ public class MemberService {
      */
     public Long join(Member member) {
 
+        long start = System.currentTimeMillis();
+
         validateDuplicateMember(member); // 중복 회원 검증
         memberRepository.save(member);
         return member.getId();
